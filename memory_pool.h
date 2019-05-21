@@ -51,7 +51,7 @@ public:
 				memory.length = blocksize;
 				m_memorylist.push_back(memory);
 
-				ite->buffer = ite->buffer+blocksize;
+				ite->buffer += blocksize;
 				ite->length -= blocksize;
 				break;
 			}
@@ -61,7 +61,6 @@ public:
 				break;
 			}
 		}
-		memset(buffer, 0, sizeof(T)*blocksize);
 		return buffer;
 	}
 	inline void deallocate(T* buffer)
